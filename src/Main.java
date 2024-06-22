@@ -158,3 +158,10 @@ public class Catedratico {
         this.universidad = universidad;
     }
 }
+
+public void listaDeEstudiantes() {
+    System.out.println("Lista de estudiantes:");
+    for (String estudiante : estudiantes) {
+        System.out.println(estudiante);
+    }
+}
