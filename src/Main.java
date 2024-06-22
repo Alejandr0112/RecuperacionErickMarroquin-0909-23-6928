@@ -58,3 +58,103 @@ public class Main {
         scanner.close();
     }
 }
+
+import java.util.Scanner;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresa el primer numero: ");
+        double numero1 = scanner.nextDouble();
+
+        System.out.print("Ingresa el segundo numero: ");
+        double numero2 = scanner.nextDouble();
+
+        System.out.print("Ingresa la operacion que deseas aplicar (+, -, *, /): ");
+        char operacion = scanner.next().charAt(0);
+
+        double resultado;
+
+        switch (operacion) {
+            case '+':
+                resultado = numero1 + numero2;
+                break;
+            case '-':
+                resultado = numero1 - numero2;
+                break;
+            case '*':
+                resultado = numero1 * numero2;
+                break;
+            case '/':
+                if (numero2 != 0) {
+                    resultado = numero1 / numero2;
+                } else {
+                    System.out.println("Error: Division por cero");
+                    scanner.close();
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Operacion no valida");
+                scanner.close();
+                return;
+        }
+
+        System.out.println("El resultado es: " + resultado);
+        scanner.close();
+    }
+}
+
+public class Catedratico {
+    private String nombre;
+    private int edad;
+    private String especialidad;
+    private String universidad;
+
+    public Catedratico() {
+    }
+
+    public Catedratico(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Catedratico(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    // Getters y Setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public String getUniversidad() {
+        return universidad;
+    }
+
+    public void setUniversidad(String universidad) {
+        this.universidad = universidad;
+    }
+}
