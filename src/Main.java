@@ -165,3 +165,50 @@ public void listaDeEstudiantes() {
         System.out.println(estudiante);
     }
 }
+
+public void gestionDeEstudiantes() {
+    boolean gestionSalir = false;
+
+    while (!gestionSalir) {
+        System.out.println("\n====================");
+        System.out.println("  Gestion de estudiantes");
+        System.out.println("====================");
+        System.out.println("1. Agregar estudiante");
+        System.out.println("2. Eliminar estudiante");
+        System.out.println("3. Volver al menú principal");
+        System.out.println("====================");
+        System.out.print("Ingrese su opcion: ");
+        int opcion = scanner.nextInt();
+        scanner.nextLine();
+        switch (opcion) {
+            case 1:
+                agregarEstudiante();
+                break;
+            case 2:
+                eliminarEstudiante();
+                break;
+            case 3:
+                gestionSalir = true;
+                break;
+            default:
+                System.out.println("Error: Opcion no valida. Por favor, seleccione una opcion valida.");
+                break;
+        }
+    }
+}
+
+private void agregarEstudiante() {
+    System.out.print("Ingrese el nombre y calificacion del estudiante a agregar: ");
+    String nombre = scanner.nextLine();
+    Main.estudiantes.add(nombre);
+    System.out.println("Estudiante \"" + nombre + "\" agregado correctamente.");
+}
+
+private void eliminarEstudiante() {
+    System.out.print("Ingrese el nombre y calificacion del estudiante a eliminar: ");
+    String nombre = Main.scanner.nextLine();
+    if (estudiantes.remove(nombre)) System.out.println("Estudiante \"" + nombre + "\" eliminado correctamente.");
+    else {
+        System.out.println("Error: Estudiante no encontrado.");
+    }
+}
